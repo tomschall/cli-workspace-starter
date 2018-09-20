@@ -19,6 +19,12 @@
     "paths": {
       "@flight-workspace/flight-api": [
         "projects/flight-api/src/public_api"
+      ],
+      "example": [
+        "dist/example"
+      ],
+      "example/*": [
+        "dist/example/*"
       ]
     }
   }

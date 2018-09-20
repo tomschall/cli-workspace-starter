@@ -9,20 +9,22 @@ import {FlightCardComponent} from './flight-card/flight-card.component';
 import {FlightEditComponent} from './flight-edit/flight-edit.component';
 import {FlightSearchComponent} from './flight-search/flight-search.component';
 import {PassengerSearchComponent} from './passenger-search/passenger-search.component';
+import {AirportComponent} from './airport/airport.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     SharedModule.forChild(),
-    RouterModule.forChild(FLIGHT_BOOKING_ROUTES)
+    RouterModule
   ],
   declarations: [
     FlightSearchComponent,
     FlightCardComponent,
     PassengerSearchComponent,
     FlightEditComponent,
-    FlightBookingComponent
+    FlightBookingComponent,
+    AirportComponent
   ],
   providers: [],
   exports: [
@@ -30,4 +32,5 @@ import {PassengerSearchComponent} from './passenger-search/passenger-search.comp
   ]
 })
 export class FlightBookingModule {
+  static routes = FLIGHT_BOOKING_ROUTES;
 }
