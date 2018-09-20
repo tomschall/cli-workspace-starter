@@ -14,6 +14,8 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {SharedModule} from './shared/shared.module';
 import {SidebarComponent} from './sidebar/sidebar.component';
 
+import { OAuthModule } from 'angular-oauth2-oidc';
+
 
 @NgModule({
   imports: [
@@ -23,7 +25,8 @@ import {SidebarComponent} from './sidebar/sidebar.component';
 
     FlightApiModule.forRoot(),
     SharedModule.forRoot(),
-    RouterModule.forRoot([...APP_ROUTES], {...APP_EXTRA_OPTIONS})
+    RouterModule.forRoot([...APP_ROUTES], {...APP_EXTRA_OPTIONS}),
+    OAuthModule.forRoot(),
   ],
   declarations: [
     AppComponent,

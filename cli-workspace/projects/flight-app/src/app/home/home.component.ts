@@ -26,17 +26,18 @@ export class HomeComponent implements OnInit {
       )
   }
 
-  get userName() {
+  get userName(): string {
     return this.authService.userName;
   }
 
-  login() {
-    this.authService.login();
+  login(): void {
+      this.authService.login();
   }
 
-  logout() {
-    this.authService.logout();
+  logout(): void {
+      this.authService.logout();
   }
+
 
 
 }
