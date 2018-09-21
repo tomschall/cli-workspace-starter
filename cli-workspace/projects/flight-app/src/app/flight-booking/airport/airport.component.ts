@@ -8,7 +8,7 @@ import { AirportService } from '@flight-workspace/flight-api';
 })
 export class AirportComponent implements OnInit {
 
-    private airports: string[] = [];
+    public airports: string[] = [];
 
     constructor(private airportService: AirportService) { 
     }
