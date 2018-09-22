@@ -14,6 +14,10 @@ import {SharedModule} from './shared/shared.module';
 import {SidebarComponent} from './sidebar/sidebar.component';
 
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './+state';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -25,6 +29,8 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     SharedModule.forRoot(),
     RouterModule.forRoot([...APP_ROUTES], {...APP_EXTRA_OPTIONS}),
     OAuthModule.forRoot(),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   declarations: [
     AppComponent,
